@@ -1,0 +1,234 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/view.css">
+    <link rel="stylesheet" href="style/upload.css">
+    <link rel="stylesheet" href="style/details.css">
+    <link rel="stylesheet" href="style/sendEmail.css">
+</head>
+
+<body>
+    <div class="retailer">
+        <div class="nav">
+            <div class="user">
+                <div class="img">
+                    <img src="../samples/profile-square.jpg" alt="">
+                </div>
+                <div class="data">
+                    <h4>Anish Roy</h4>
+                    <h6>anish@email.com</h6>
+                    <h5>Administrator</h5>
+                </div>
+            </div>
+            <div class="imp_data">
+                <p>Total Stocks</p>
+                <b id="totalStok">0</b>
+                <p>Number of Products</p>
+                <b id="totalProd">0</b>
+                <p>Total Orders Left</p>
+                <b id="totalOrd">0</b>
+            </div>
+            <ul>
+                <li id="tab_1" onclick="openTab(1)" class="active">add products</li>
+                <li id="tab_2" onclick="openTab(2)">view products</li>
+                <li id="tab_3" onclick="openTab(3)">delete products</li>
+                <li id="tab_4" onclick="openTab(4)">view incomplete odrers</li>
+                <li id="tab_5" onclick="openTab(5)">view odrers</li>
+                <li id="tab_6" onclick="openTab(6)">send promotion email</li>
+            </ul>
+            <div class="bottom">
+                <p>Creative World</p>
+                <span>
+                    <p>&#169; Copyright Creative World, 2020</p>
+                    <p>Made with &#9825; By Anish Roy.</p>
+                </span>
+            </div>
+        </div>
+        <div class="main">
+            <div class="div view" style="display: none;">
+                <h2>View Product</h2>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Product ID</th>
+                            <th class="column2">Brand</th>
+                            <th class="column3">Name</th>
+                            <th class="column4">Price</th>
+                            <th class="column5">Quantity</th>
+                            <th class="column6"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="div viewIncOrd" style="display: none;">
+                <h2>View Incomplete Orders</h2>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">SlNo.</th>
+                            <th class="column2">Customer</th>
+                            <th class="column3">email</th>
+                            <th class="column4">Item</th>
+                            <th class="column5">Price</th>
+                            <th class="column6"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="div viewOrd" style="display: none;">
+                <h2>View Orders</h2>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">SlNo.</th>
+                            <th class="column2">Customer</th>
+                            <th class="column3">email</th>
+                            <th class="column4">Item</th>
+                            <th class="column5">Price</th>
+                            <th class="column6"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="div delItem" style="display: none;">
+                <h2>Delete Item</h2>
+                <table>
+                    <thead>
+                        <tr class="table100-head">
+                            <th class="column1">Product ID</th>
+                            <th class="column2">Brand</th>
+                            <th class="column3">Name</th>
+                            <th class="column4">Price</th>
+                            <th class="column5">Quantity</th>
+                            <th class="column6"></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="div sendEmail" style="display: none;">
+                <h2>Send Email</h2>
+                <div class="editor">
+               <textarea placeholder="type HTML for your email" onkeyup="refreshOutput()"></textarea>
+            <div class="output">
+                Output will be generated here...
+            </div>
+            </div>
+               <button onclick="sendEmail()">Send</button>
+            </div>
+            <div class="div upload">
+                <h2>Add Product</h2>
+                <div class="image">
+                    <img src="/assets/images/add-image.png" alt=""
+                        onclick="document.querySelector('.image input').click()">
+                    <input type="file" style="display: none;" onchange="imgAdded = true; document.querySelector('.image img')
+                    .setAttribute('src', reader.readAsDataURL(document.querySelector('.image input').files[0]))">
+                </div>
+                <div class="details">
+                    <div class="about">
+                        <p>brand name</p>
+                        <input type="text" id="add_BName">
+                        <p>product name</p>
+                        <input type="text" id="add_PName">
+                        <p>product description</p>
+                        <textarea id="add_PDesc"></textarea>
+                        <p>quantity in stock</p>
+                        <input type="number" id="add_Qty">
+                        <div class="price">
+                            <div>
+                                <p>normal price</p>
+                                <input type="number" id="add_nPrice">
+                            </div>
+                            <div>
+                                <p>discounted price</p>
+                                <input type="number" id="add_dPrice">
+                            </div>
+                        </div>
+                        <p>search words (seperate by a blank space)</p>
+                        <textarea id="add_search"></textarea>
+                        <button onclick="addProduct()" id="add">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details_container" style="display: none;">
+        <b id="close"
+            onclick="document.querySelector('.details_container').setAttribute('style', 'display: none;');">X</b>
+        <div class="details">
+            <div class="image">
+                <img src="/assets/images/products/500x500.jpg" alt="">
+            </div>
+            <div class="others">
+                <div class="about">
+                    <h5>BRAND NAME</h5>
+                    <h1>The Catcher in the Rye</h1>
+                    <div class="rating">
+                        <b>&#9733;&#9733;&#9733;&#9733;&#9734;</b>
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="">4 Reviews</a>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam atque reiciendis!
+                        Voluptatum
+                        obcaecati ullam esse magnam omnis quaerat aliquid consequuntur soluta repellat voluptate saepe,
+                        voluptatibus iure alias minus recusandae totam tenetur. Ratione laudantium illo dicta sed ea.
+                        Sint,
+                        corporis.
+                    </p>
+                    Available QTY <span>500 pieces</span>
+                    <div class="price">
+                        <b>
+                            <s>&#x20B9; 58.00</s><br>
+                            &#x20B9; 55.00
+                        </b>
+                        <button>Purchase</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="details_user_container" style="display: none;">
+        <b id="close"
+            onclick="document.querySelector('.details_user_container').setAttribute('style', 'display: none;');">X</b>
+        <div class="customer">
+            <h3>Customer <span>Details</span></h3>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td id="cus_name">Name</td>
+                    </tr>
+                    <tr>
+                        <td>Contact</td>
+                        <td id="cus_cont">email</td>
+                    </tr>
+                    <tr>
+                        <td>Address</td>
+                        <td id="cus_addr">fetching...</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+    <script src="../assets/script/config.js"></script>
+    <script src="script/addProduct.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/viewProduct.js"></script>
+    <script src="script/viewOrders.js"></script>
+    <script src="script/deleteItem.js"></script>
+    <script src="../assets/script/smtp.js"></script>
+    <script src="script/sendEmail.js"></script>
+</body>
+
+</html>

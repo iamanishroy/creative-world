@@ -1,0 +1,170 @@
+.details_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #08253F26;
+    backdrop-filter: blur(10px);
+}
+#close{
+    font-size: 1rem;
+    position: fixed;
+    right: 80px;
+    top: 30px;
+    cursor: pointer;
+}
+.details_container .details {
+    margin: 60px 100px;
+    height: calc(100vh - 120px);
+    width: calc(100vw - 200px);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.details_container .details .image {
+    width: calc(50vw - 100px);
+}
+.details_container .details .image img {
+    width: 500px;
+    max-height: 500px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.details_container .details .others {
+    width: calc(50vw - 100px);
+}
+.details_container .details .others .about {
+    width: 80%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.details_container .details .others .about h5 {
+    color: #00000066;
+}
+.details_container .details .others .about h1 {
+    margin: 20px 0 10px 0;
+}
+.details_container .details .others .about .rating {
+    margin-bottom: 20px;
+    color: #fa009a;
+}
+.details_container .details .others .about .rating a {
+    text-decoration: none;
+    color: #08253Fab;
+}
+.details_container .details .others .about .rating a:hover {
+    color: #08253F;
+}
+.details_container .details .others .about p {
+    color: #00000099;
+    font-size: .8rem;
+    margin-bottom: 30px;
+}
+.details_container .details .others .about span {
+    font-size: 1rem;
+    border: 1px solid #00000044;
+    padding: 10px;
+    margin-left: 30px;
+}
+.details_container .details .others .about .price {
+    margin-top: 50px;
+    border-top: 1px solid #00000055;
+    padding-top: 10px;
+}
+.details_container .details .others .about .price b {
+    font-size: 1.2rem;
+    color: #08253F;
+}
+.details_container .details .others .about .price b s {
+    font-size: .8rem;
+    color: red;
+}
+.details_container .details .others .about .price .button {
+    float: right;
+    transform: translateY(-15px);
+}
+.details_container .details .others .about .price .button button {
+    background-color: aquamarine;
+    color: #08253F;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: -6px 6px 12px #666666, 6px -6px 12px #ffffff;
+}
+.details_container .details .others .about .price .button button:last-child {
+    border-radius: 50%;
+    margin-left: 15px;
+    height: 40px;
+    width: 40px;
+    padding: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+    font-weight: bold;
+    background-color: transparent;
+    border-radius: 150px;
+    color: #cb007d;
+    animation: anim-glow 2s ease infinite;
+}
+.details_container .details .others .about .rates {
+    margin-top: 20px;
+    font-size: 1.5rem;
+}
+.details_container .details .others .about .rates ul {
+    list-style: none;
+    display: inline-flex;
+    float: right;
+    background-color: #cb007d0f;
+    padding: 5px 12px;
+    border-top-left-radius: 22px;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    box-shadow: -7px 7px 14px #ad006a4d, 7px -7px 14px #e900902e;
+}
+.details_container .details .others .about .rates ul li {
+    border: 1px solid;
+    height: 25px;
+    width: 25px;
+    margin: 5px 2px;
+    text-align: center;
+    border-radius: 50%;
+    line-height: 1;
+    color: #cb007d;
+    cursor: pointer;
+}
+@keyframes anim-glow {
+    0% {
+        box-shadow: 0 0 10px 8px transparent;
+        border-width: 2px;
+   }
+    50% {
+        box-shadow: 0 0 28px #cb007d;
+   }
+    100% {
+        box-shadow: 0 0 10px 8px transparent;
+        border-width: 2px;
+   }
+}
+@media screen and (max-width: 800px) {
+    .details_container .details {
+        margin: 20px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+   }
+    .details_container .details .image {
+        width: 80vw;
+   }
+    .details_container .details .image img {
+        width: 80vw;
+        max-height: 80vw;
+   }
+    .details_container .details .others {
+        width: 90vw;
+   }
+}

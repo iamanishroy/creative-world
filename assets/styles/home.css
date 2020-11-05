@@ -1,0 +1,145 @@
+.main {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../images/backgrond.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.main .content {
+    position: relative;
+    top: 30vh;
+    margin-left: 35vw;
+    text-align: center;
+    color: #ffffff;
+}
+.main h1 {
+    font-size: 5rem;
+    font-family: 'Overpass', sans-serif;
+    font-weight: 900;
+    color: #FAC42F;
+}
+.main h3 {
+    font-size: 1.5rem;
+}
+.main button {
+    margin: 20px;
+    width: 40%;
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border: 2px solid #FAC42F;
+    background-color: transparent;
+    color: #ffffff;
+    border-radius: 10px;
+}
+.main button:first-child {
+    background-color: #FAC42F;
+    color: #000000;
+    border-radius: 10px;
+}
+.offer {
+    width: 100vw;
+    height: 100vh;
+}
+.offer .border {
+    background-image: url(../images/Inn.svg);
+    height: 15vh;
+    background-size: contain;
+}
+.offer h2 {
+    color: #FAC42F;
+    margin-left: 5vw;
+    font-size: 5rem;
+    margin: 20px;
+    font-weight: 700;
+}
+.offer h6 {
+    margin: 10px 20px;
+    font-size: 2rem;
+}
+.offer img {
+    width: 250px;
+    position: absolute;
+    left: 50vw;
+    top: 108vh;
+}
+.offer .lists {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 3rem;
+}
+.offer .lists div {
+    background: #FAC42F;
+    height: 100%;
+    width: 15vw;
+    font-size: 1.5rem;
+    padding: 2rem;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 4px 2px 20px 0px #0000008c;
+}
+.offer .lists div span {
+    font-weight: 700;
+}
+footer {
+    width: 100vw;
+    height: 50vh;
+    background-image: url(../images/footer.jpg);
+    background-size: contain;
+    background-repeat: repeat-x;
+}
+footer h3 {
+    padding: 2rem 0 1rem 6rem;
+}
+footer input {
+    margin: 1rem 8px 2rem 6rem;
+    padding: .5rem;
+    border: none;
+    border-radius: 6px;
+}
+footer input[type="button"] {
+    margin: 0;
+    color: #ffffff;
+    background-color: red;
+    font-weight: 700;
+    border: none;
+}
+footer .credits {
+    width: 50vw;
+    float: right;
+    text-align: center;
+}
+@media screen and (max-width: 800px) {
+    .main{
+        background-image: none;
+        background-color: #08253F;
+   }
+    .main .content{
+        top: 10vh;
+        margin-left: 0;
+   }
+    .offer{
+        height: auto;
+   }
+    .offer img{
+        display: none;
+   }
+    .offer .lists div {
+        width: 80vw;
+        margin-bottom: 20px;
+   }
+    footer{
+        height: 75vw;
+   }
+    footer h3 {
+        padding: 1rem;
+   }
+    footer input {
+        margin: 1rem;
+   }
+    footer .credits {
+        width: 100vw;
+        float: none;
+   }
+}

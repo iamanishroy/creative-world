@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Overpass:wght@700;800;900&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: 'Comfortaa', cursive;
+     outline: none;
+}
+ .navbar {
+     font-size: 18px;
+     background-color: rgb(0,0,0);
+     border: 1px solid rgba(0, 0, 0, 0.2);
+     padding-bottom: 10px;
+}
+ .main-nav {
+     list-style-type: none;
+     display: none;
+}
+ .nav-links, .logo {
+     text-decoration: none;
+     color: #ffffff;
+     font-weight: 600;
+}
+ .logo img{
+     height: 4rem;
+}
+ .main-nav li {
+     text-align: center;
+     margin: 15px auto;
+}
+ .main-nav li img{
+     height: 36px;
+     width: 36px;
+     margin: 0 2rem;
+     border-radius: 50%;
+}
+ .main-nav li:hover {
+     color: #FAC42F;
+}
+ .logo {
+     display: inline-block;
+     font-size: 2.5rem;
+     margin-left: 20px;
+}
+ .navbar-toggle {
+     position: absolute;
+     top: 10px;
+     right: 20px;
+     cursor: pointer;
+     color: #ffffff;
+     font-size: 20px;
+     transform: rotateZ(90deg);
+     line-height: 3;
+}
+ .active {
+     display: block;
+}
+ li .btn{
+     color: #2B2B52;
+     background: #FAC42F;
+     padding: 6px 20px 6px 20px;
+     border-radius: 10px;
+}
+ @media screen and (min-width: 768px) {
+     .navbar {
+         display: flex;
+         justify-content: space-between;
+         padding-bottom: 0;
+         align-items: center;
+    }
+     .logo {
+         font-size: 1.5rem;
+    }
+     .main-nav {
+         display: flex;
+         margin-right: 30px;
+         flex-direction: row;
+         justify-content: flex-end;
+    }
+     .main-nav li {
+         margin: 0;
+         line-height: 2;
+    }
+     .nav-links {
+         margin-left: 40px;
+    }
+     .logo {
+         margin-top: 0;
+    }
+     .navbar-toggle {
+         display: none;
+    }
+     .logo:hover, .nav-links:hover {
+         color: rgba(255, 255, 255, 1);
+    }
+}

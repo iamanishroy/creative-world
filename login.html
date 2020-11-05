@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/auth.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="login">
+        <center>
+            <a href="index.html"><img src="assets/images/Creative_World_LOGO.png" alt=""></a>
+            <h1>Creative World</h1>
+            <h3>Sign In</h3>
+        </center>
+        <div class="form">
+            <p>Email</p>
+            <input type="email" id="email">
+            <p>Password</p>
+            <input type="password" id="pass">
+            <button onclick="signIn()">Login</button>
+            <center>
+                <b>Don't have account?<a href="signUp.html"> Create Now</a></b>
+            </center>
+        </div>
+    </div>
+    <footer>
+        <p>&#169; Copyright Creative World, 2020</p>
+        <p>Made with &#9825; By Anish Roy.</p>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="assets/script/config.js"></script>
+    <script src="assets/script/signIn.js"></script>
+</body>
+
+</html>

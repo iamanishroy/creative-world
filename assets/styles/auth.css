@@ -1,0 +1,83 @@
+body {
+    height: 100vh;
+    background-color: #08253F;
+}
+.login {
+    height: 76vh;
+    width: 50vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 44px;
+    background: #08253F;
+    color: #ffffff;
+    box-shadow: -16px 16px 45px #051828, 16px -16px 45px #0b3256;
+}
+.login center img {
+    height: 5rem;
+    margin-top: 1rem;
+}
+.login .form {
+    width: 70%;
+    margin: 10% auto;
+}
+.login .form p {
+    color: #919191;
+    font-size: .8rem;
+    margin: 1rem 2rem;
+}
+.login .form input {
+    width: calc(100% - 60px);
+    height: 3rem;
+    border-radius: 30px;
+    border: none;
+    padding: 0 30px;
+    background: #08253F;
+    color: aliceblue;
+    outline: none;
+    box-shadow: inset -6px 6px 12px #051727, inset 6px -6px 12px #0b3357;
+}
+.login .form button {
+    height: 3rem;
+    padding: 0 80px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: none;
+    margin: 3rem auto 1.5rem auto;
+    border-radius: 50px;
+    background: #08253F;
+    color: aliceblue;
+    box-shadow: -6px 6px 12px #051727, 6px -6px 12px #0b3357;
+}
+.login .form center{
+    color: #a5a5a5;
+}
+.login .form center a{
+    text-decoration: none;
+    color: rgb(103 198 158);
+}
+.afterOTP{
+    display: none;
+}
+button{
+    outline: none;
+}
+@media screen and (max-width: 800px) {
+    .login {
+        width: 90vw;
+   }
+    .login .form {
+        width: 90%;
+   }
+}
+footer {
+    position: fixed;
+    bottom: 0;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: .8rem;
+    color: rgb(168, 168, 168);
+    width: 100%;
+}

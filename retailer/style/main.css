@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;700&family=Overpass:wght@700;800;900&display=swap');
+ * {
+     margin: 0;
+     padding: 0;
+     font-family: 'Comfortaa', cursive;
+     outline: none;
+}
+ .retailer {
+     display: flex;
+}
+ .retailer .nav {
+     background: #136a8a;
+     background: linear-gradient(to right, #267871, #136a8a);
+     width: 300px;
+     height: 100vh;
+     position: sticky;
+}
+ .retailer .nav .user {
+     margin: 20px;
+     display: flex;
+     padding-bottom: 20px;
+     border-bottom: 3px solid #f0f8ff5c;
+}
+ .retailer .nav .user .img {
+     width: 100px;
+}
+ .retailer .nav .user .img img {
+     height: 80px;
+     border-radius: 50%;
+}
+ .retailer .nav .user .data {
+     color: aliceblue;
+     padding-top: 20px;
+}
+ .retailer .nav .imp_data {
+     margin: 20px;
+     color: aliceblue;
+     padding-bottom: 20px;
+     border-bottom: 3px solid #f0f8ff5c;
+}
+ .retailer .nav .imp_data p {
+     color: #efefefab;
+     font-size: .8rem;
+     margin: 10px 0 6px 0;
+}
+ .retailer .nav ul {
+     list-style: none;
+     margin: 20px;
+     color: aliceblue;
+     padding-bottom: 20px;
+     border-bottom: 3px solid #f0f8ff5c;
+}
+ .retailer .nav ul li {
+     padding: 10px;
+     margin-bottom: 5px;
+     border-radius: 8px;
+     background-color: #ffffff21;
+}
+ .retailer .nav ul li:hover, .retailer .nav ul .active {
+     background-color: #ffffff73;
+}
+ .retailer .nav .bottom {
+     margin: 20px;
+     color: aliceblue;
+     text-align: center;
+}
+ .retailer .nav .bottom span {
+     padding: 40px;
+     font-size: .8rem;
+     color: #cccccc;
+}

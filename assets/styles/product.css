@@ -1,0 +1,28 @@
+.search {
+    margin: 10px auto;
+    border-bottom: 2px solid #000;
+}
+.search input {
+    margin-left: 1rem;
+    padding: .5rem;
+    border: none;
+    border-radius: 6px;
+}
+.search input[type="text"] {
+    width: 80%;
+}
+.search input[type="button"] {
+    margin: 0;
+    color: #ffffff;
+    background-color: #FAC42F;
+    font-weight: 700;
+    border: none;
+}
+.search b {
+    margin-left: 2rem;
+}
+.searchResult {
+    display: inline-flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

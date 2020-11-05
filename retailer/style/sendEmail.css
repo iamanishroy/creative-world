@@ -1,0 +1,30 @@
+.sendEmail .editor{
+    height: 70vh;
+    display: flex;
+}
+.sendEmail .editor textarea{
+    margin: 40px 20px;
+    height: 90%;
+    width: 35vw;
+    padding: 5vw;
+    border-radius: 30px;
+    border: none;
+    background-color: rgba(54, 125, 207, 0.205);
+    font-size: 1rem;
+}
+.sendEmail .editor div{
+    margin: 40px 0;
+    width: 35vw;
+    padding: 2vw;
+    border-radius: 30px;
+    background-color: rgba(20, 138, 93, 0.205);
+}
+.sendEmail button{
+    margin: inherit;
+    padding: 10px 30px;
+    background-color: #08253F;
+    border: none;
+    border-radius: 10px;
+    color: aliceblue;
+    cursor: pointer;
+}

@@ -1,0 +1,45 @@
+.services {
+    background-image: url(../images/Aare.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.card {
+    width: 280px;
+    height: 100%;
+    background-color: #121a47;
+    border-radius: 1rem;
+    color: #5f5d5d;
+    margin: 30px 80px;
+    padding: 20px;
+}
+.subCard{
+    border: 3px solid #FAC42F;
+    border-radius: 1rem;
+}
+.card img {
+    width: 90%;
+    margin: 5%;
+    height: 280px;
+}
+.card .data {
+    text-align: center;
+}
+.card .title {
+    font-size: 1.5rem;
+    color: #FAC42F;
+    margin-bottom: .5rem;
+}
+.card .price {
+    display: inline-block;
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+}
+@media screen and (max-width: 800px) {
+    .card {
+        margin: 30px auto;
+   }
+}

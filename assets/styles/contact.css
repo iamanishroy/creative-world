@@ -1,0 +1,75 @@
+.body {
+    display: flex;
+    flex-wrap: wrap 
+}
+.body .details {
+    width: 30%;
+    background-color: #30336B;
+    height: calc(100vh - 36px);
+    color: #ffffff;
+    padding: 5vw 8vw;
+}
+.body .details h5 {
+    margin-top: 10px;
+    color: rgb(126, 126, 126);
+}
+.body .details ul {
+    margin-top: 50px;
+    list-style: none;
+    font-size: 20px;
+}
+.body .details ul img {
+    height: 36px;
+}
+.body .details ul li {
+    margin-bottom: 20px;
+}
+.body .form {
+    width: 50%;
+}
+.body .form .inputs {
+    width: 60%;
+    margin: 15vh auto;
+}
+.body .form .inputs input, textarea {
+    width: calc(100% - 2rem);
+    padding: 1rem;
+    margin: .5rem 0 1rem 0;
+    border: none;
+    background-color: #30336B55;
+    color: #30336B;
+    border-radius: 20px;
+    outline: none;
+}
+textarea {
+    font-size: 1rem;
+}
+.body .form .inputs input:last-child {
+    width: 80%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 1rem;
+    font-weight: bolder;
+}
+.body .form .inputs input:last-child:hover {
+    background-color: #30336B;
+    color: #ffffff;
+    cursor: pointer;
+}
+@media screen and (max-width: 800px) {
+    .body .details {
+        width: 100%;
+        height: auto;
+   }
+    .body .form {
+        width: 100%;
+   }
+    .body .form .inputs {
+        width: calc(100% - 2rem);
+        margin: 30px auto;
+   }
+    .body .form .inputs input, textarea {
+        width: calc(90% - 2rem);
+   }
+}

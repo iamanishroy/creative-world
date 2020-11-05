@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/contact.css">
+    <link rel="stylesheet" href="assets/styles/profile.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            |||
+        </span>
+        <a href="#" class="logo"><img src="assets/images/Creative_World_LOGO_withName.png" alt="Creative World"></a>
+        <ul class="main-nav" id="js-menu">
+            <li> <a href="index.html" class="nav-links active">Home</a></li>
+            <li> <a href="product.html" class="nav-links">Products</a></li>
+            <li> <a href="service.html" class="nav-links">Services</a></li>
+            <li> <a href="contact.html" class="nav-links">Contact Us</a></li>
+            <li> <a href="#" class="nav-links btn">Login</a></li>
+        </ul>
+    </nav>
+    <div class="body">
+        <div class="details">
+            <h1>Contact Information</h1>
+            <h5>Fill the form to get in contact with us</h5>
+
+            <ul>
+                <li><img src="assets/images/email.svg">&nbsp; contact@creativeworld.com</li>
+                <li><img src="assets/images/phone.svg">&nbsp; +91 6854751523</li>
+                <li><img src="assets/images/location.svg">&nbsp; 23 street, Dargeling more</li>
+            </ul>
+        </div>
+
+        <div class="form">
+            <div class="inputs">
+                name
+                <input type="text" />
+                <br>
+                email
+                <input type="text" />
+                <br>
+                messege
+                <textarea></textarea>
+                <br>
+                <input type="button" value="Send" />
+            </div>
+        </div>
+    </div>
+    <div class="profile" style="display: none;">
+        <b onclick="document.querySelector('.profile').style.display = 'none'">X</b>
+        <div class="user">
+            <div class="image">
+                <img src="samples/profile-square.jpg" alt="">
+            </div>
+            <div class="data">
+                <h3>demo</h3>
+                <h6>demo@demo.demo</h6>
+                <div class="location">
+                    <div>
+                        <p>demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="editBox()">Edit</button>
+            <button
+                onclick="firebase.auth().signOut(); document.querySelector('.profile').style.display = 'none'">Logout</button>
+        </div>
+        <div class="edit" style="display: none;">
+            <p>Change Details :-</p>
+            <input type="file" id="changeImg" accept="image/png, image/jpeg" onchange="imgChanged = true">
+            <input type="text" placeholder="name" id="changeName">
+            <textarea placeholder="address" id="changeAdd"></textarea>
+            <button onclick="change()">Save</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+    <script src="assets/script/config.js"></script>
+    <script src="assets/script/auth.js"></script>
+</body>
+
+</html>

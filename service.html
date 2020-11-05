@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/navbar.css">
+    <link rel="stylesheet" href="assets/styles/service.css">
+    <link rel="stylesheet" href="assets/styles/profile.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <span class="navbar-toggle" id="js-navbar-toggle">
+            |||
+        </span>
+        <a href="#" class="logo"><img src="assets/images/Creative_World_LOGO_withName.png" alt="Creative World"></a>
+        <ul class="main-nav" id="js-menu">
+            <li> <a href="index.html" class="nav-links active">Home</a></li>
+            <li> <a href="product.html" class="nav-links">Products</a></li>
+            <li> <a class="nav-links">Services</a></li>
+            <li> <a href="contact.html" class="nav-links">Contact Us</a></li>
+            <li> <a href="#" class="nav-links btn">Login</a></li>
+        </ul>
+    </nav>
+    <div class="services">
+        <div class="card">
+            <div class="subCard">
+                <img src="assets/images/service-photocopying.svg" alt="">
+                <div class="data">
+                    <h1 class="title">Photo Copy</h1>
+                    <span class="price">&#x20B9;15/10 page</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="subCard">
+                <img src="assets/images//service-binding.svg" alt="">
+                <div class="data">
+                    <h1 class="title">Paper Binding</h1>
+                    <span class="price">&#x20B9;80/100 pages</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="subCard">
+                <img src="assets/images/service-card.svg" alt="">
+                <div class="data">
+                    <h1 class="title">Buisness Card</h1>
+                    <span class="price">&#x20B9;250/100 cards</span>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="subCard">
+                <img src="assets/images/service-printing.svg" alt="">
+                <div class="data">
+                    <h1 class="title">Paper Print</h1>
+                    <span class="price">&#x20B9;10/sheet (color)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="profile" style="display: none;">
+        <b onclick="document.querySelector('.profile').style.display = 'none'">X</b>
+        <div class="user">
+            <div class="image">
+                <img src="samples/profile-square.jpg" alt="">
+            </div>
+            <div class="data">
+                <h3>demo</h3>
+                <h6>demo@demo.demo</h6>
+                <div class="location">
+                    <div>
+                        <p>demo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="buttons">
+            <button onclick="editBox()">Edit</button>
+            <button
+                onclick="firebase.auth().signOut(); document.querySelector('.profile').style.display = 'none'">Logout</button>
+        </div>
+        <div class="edit" style="display: none;">
+            <p>Change Details :-</p>
+            <input type="file" id="changeImg" accept="image/png, image/jpeg" onchange="imgChanged = true">
+            <input type="text" placeholder="name" id="changeName">
+            <textarea placeholder="address" id="changeAdd"></textarea>
+            <button onclick="change()">Save</button>
+        </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
+    <script src="assets/script/config.js"></script>
+    <script src="assets/script/auth.js"></script>
+</body>
+
+</html>

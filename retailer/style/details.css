@@ -1,0 +1,126 @@
+.details_container, .details_user_container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: #08253F26;
+    backdrop-filter: blur(10px);
+}
+#close{
+    font-size: 1rem;
+    position: fixed;
+    right: 80px;
+    top: 30px;
+    cursor: pointer;
+}
+.details_container .details {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100vh - 120px);
+    width: calc(100vw - 200px);
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.details_container .details .image {
+    width: calc(50vw - 100px);
+}
+.details_container .details .image img {
+    width: 500px;
+    max-height: 500px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.details_container .details .others {
+    width: calc(50vw - 100px);
+}
+.details_container .details .others .about {
+    width: 80%;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.details_container .details .others .about h5 {
+    color: #00000066;
+}
+.details_container .details .others .about h1 {
+    margin: 20px 0 10px 0;
+}
+.details_container .details .others .about .rating {
+    margin-bottom: 20px;
+    color: #fa009a;
+}
+.details_container .details .others .about .rating a {
+    text-decoration: none;
+    color: #08253Fab;
+}
+.details_container .details .others .about .rating a:hover {
+    color: #08253F;
+}
+.details_container .details .others .about p {
+    color: #00000099;
+    font-size: .8rem;
+    margin-bottom: 30px;
+}
+.details_container .details .others .about span {
+    font-size: 1rem;
+    border: 1px solid #00000044;
+    padding: 10px;
+    margin-left: 30px;
+}
+.details_container .details .others .about .price {
+    margin-top: 50px;
+    border-top: 1px solid #00000055;
+    padding-top: 10px;
+}
+.details_container .details .others .about .price b {
+    font-size: 1.2rem;
+    color: #08253F;
+}
+.details_container .details .others .about .price b s {
+    font-size: .8rem;
+    color: red;
+}
+.details_container .details .others .about .price button {
+    float: right;
+    background-color: aquamarine;
+    color: #08253F;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    transform: translateY(-15px);
+    box-shadow: -6px 6px 12px #666666, 6px -6px 12px #ffffff;
+}
+.details_user_container .customer{
+    background-color: rgb(5 46 85);
+    padding: 30px;
+    width: 350px;
+    border-radius: 30px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.details_user_container .customer h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: aliceblue;
+    border-bottom: 2px dashed aliceblue;
+    width: fit-content;
+    padding-bottom: 10px;
+}
+.details_user_container .customer table td {
+    font-size: 1rem;
+    color: #f0f8ff;
+}
+.details_user_container .customer table td:first-child {
+    padding: 10px 20px;
+    font-size: .8rem;
+    color: #f0f8ff8c;
+}

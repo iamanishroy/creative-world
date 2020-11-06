@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
+    <!-- <meta charset="UTF-8"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <!-- <meta http-equiv="X-UA-Compatible" content="ie=edge"> -->
+    <title>creative-world</title>
     <link rel="stylesheet" href="assets/styles/navbar.css">
     <link rel="stylesheet" href="assets/styles/home.css">
     <link rel="stylesheet" href="assets/styles/profile.css">
 </head>
 
 <body>
+    <!-- Section 1 - First thing to be seen after the page loads -->
     <div class="main">
+        <!-- Navigation Section Starts -->
         <nav class="navbar">
             <span class="navbar-toggle" id="js-navbar-toggle">
                 |||
             </span>
+
             <a href="#" class="logo"><img src="assets/images/Creative_World_LOGO_withName.png" alt="Creative World"></a>
+
             <ul class="main-nav" id="js-menu">
                 <li> <a class="nav-links active">Home</a></li>
                 <li> <a href="product.html" class="nav-links">Products</a></li>
@@ -26,15 +29,21 @@
                 <li> <a href="login.html" class="nav-links btn">Login</a></li>
             </ul>
         </nav>
+        <!-- Navigation Section Ends-->
+
         <div class="content">
             <h1>Creative World</h1>
             <h3>The Ultimate Stationery Shop</h3>
+
             <div class="button">
                 <a href="#offer" style="text-decoration: none;"><button>Explore Offers</button></a>
                 <button onclick="window.location.replace('signUp.html')">Create Account</button>
             </div>
         </div>
     </div>
+    <!-- Section 1 Ends -->
+
+    <!-- Section 2 - Offers -->
     <div class="offer" id="offer">
         <div class="border"></div>
         <h2>Autumn Sale</h2>
@@ -46,6 +55,9 @@
             <div>get <span>free delivery</span> under 30km radius with minimum &#x20B9;499 of purchase.</div>
         </div>
     </div>
+    <!-- Section 2 Ends -->
+
+    <!-- Section 3 - Footer and Credits -->
     <footer>
         <h3>Subscribe for more upcoming Offers</h3>
         <input type="email" placeholder="email" id="sub_email">
@@ -55,40 +67,50 @@
             <p>Made with &#9825; By Anish Roy.</p>
         </div>
     </footer>
+    <!-- Section 3 Ends -->
+
+    <!-- Profile Section - this is to be shown after user clicks on profile icon -->
     <div class="profile" style="display: none;">
         <b onclick="document.querySelector('.profile').style.display = 'none'">X</b>
+        <!-- User Details -->
         <div class="user">
             <div class="image">
                 <img src="samples/profile-square.jpg" alt="">
             </div>
             <div class="data">
-                <h3>demo</h3>
-                <h6>demo@demo.demo</h6>
+                <h3>demo</h3><!-- Name -->
+                <h6>demo@demo.demo</h6><!-- Email -->
                 <div class="location">
                     <div>
-                        <p>demo</p>
+                        <p>demo</p><!-- Address -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="buttons">
-            <button onclick="editBox()">Edit</button>
+            <button onclick="editBox()">Edit</button><!-- Edit Button - toogles the edit box-->
             <button
                 onclick="firebase.auth().signOut(); document.querySelector('.profile').style.display = 'none'">Logout</button>
+            <!-- Logout Button -->
         </div>
+        <!-- Edit Section -->
         <div class="edit" style="display: none;">
             <p>Change Details :-</p>
             <input type="file" id="changeImg" accept="image/png, image/jpeg" onchange="imgChanged = true">
-            <input type="text" placeholder="name" id="changeName">
-            <textarea placeholder="address" id="changeAdd"></textarea>
-            <button onclick="change()">Save</button>
+            <!-- Used to select a new profile image -->
+            <input type="text" placeholder="name" id="changeName"><!-- Change Name -->
+            <textarea placeholder="address" id="changeAdd"></textarea><!-- Change Area -->
+            <button onclick="change()">Save</button><!-- Save Button - calls change() function -->
         </div>
     </div>
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
     <script src="assets/script/config.js"></script>
+    <!-- Firebase Scripts Ends -->
+
     <script src="assets/script/auth.js"></script>
     <script src="assets/script/subscribe.js"></script>
 </body>

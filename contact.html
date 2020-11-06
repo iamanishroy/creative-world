@@ -1,17 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Creative World | Contact Us</title>
     <link rel="stylesheet" href="assets/styles/navbar.css">
     <link rel="stylesheet" href="assets/styles/contact.css">
     <link rel="stylesheet" href="assets/styles/profile.css">
 </head>
 
 <body>
+    <!-- Navigation Section Starts-->
     <nav class="navbar">
         <span class="navbar-toggle" id="js-navbar-toggle">
             |||
@@ -25,7 +23,10 @@
             <li> <a href="#" class="nav-links btn">Login</a></li>
         </ul>
     </nav>
+    <!-- Navigation Section Ends-->
+
     <div class="body">
+        <!-- Details Section - Left side -->
         <div class="details">
             <h1>Contact Information</h1>
             <h5>Fill the form to get in contact with us</h5>
@@ -37,6 +38,7 @@
             </ul>
         </div>
 
+        <!-- Form Section - Right side -->
         <div class="form">
             <div class="inputs">
                 name
@@ -52,40 +54,48 @@
             </div>
         </div>
     </div>
+    
+    <!-- Profile Section - this is to be shown after user clicks on profile icon -->
     <div class="profile" style="display: none;">
         <b onclick="document.querySelector('.profile').style.display = 'none'">X</b>
+        <!-- User Details -->
         <div class="user">
             <div class="image">
                 <img src="samples/profile-square.jpg" alt="">
             </div>
             <div class="data">
-                <h3>demo</h3>
-                <h6>demo@demo.demo</h6>
+                <h3>demo</h3><!-- Name -->
+                <h6>demo@demo.demo</h6><!-- Email -->
                 <div class="location">
                     <div>
-                        <p>demo</p>
+                        <p>demo</p><!-- Address -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="buttons">
-            <button onclick="editBox()">Edit</button>
+            <button onclick="editBox()">Edit</button><!-- Edit Button - toogles the edit box-->
             <button
                 onclick="firebase.auth().signOut(); document.querySelector('.profile').style.display = 'none'">Logout</button>
+            <!-- Logout Button -->
         </div>
+        <!-- Edit Section -->
         <div class="edit" style="display: none;">
             <p>Change Details :-</p>
             <input type="file" id="changeImg" accept="image/png, image/jpeg" onchange="imgChanged = true">
-            <input type="text" placeholder="name" id="changeName">
-            <textarea placeholder="address" id="changeAdd"></textarea>
-            <button onclick="change()">Save</button>
+            <!-- Used to select a new profile image -->
+            <input type="text" placeholder="name" id="changeName"><!-- Change Name -->
+            <textarea placeholder="address" id="changeAdd"></textarea><!-- Change Area -->
+            <button onclick="change()">Save</button><!-- Save Button - calls change() function -->
         </div>
     </div>
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
     <script src="assets/script/config.js"></script>
+    <!-- Firebase Scripts Ends -->
     <script src="assets/script/auth.js"></script>
 </body>
 

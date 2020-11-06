@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Creative World | Products</title>
     <link rel="stylesheet" href="assets/styles/navbar.css">
     <link rel="stylesheet" href="assets/styles/product.css">
     <link rel="stylesheet" href="assets/styles/card.css">
@@ -14,6 +11,7 @@
 </head>
 
 <body>
+    <!-- Navigation Section Starts -->
     <nav class="navbar">
         <span class="navbar-toggle" id="js-navbar-toggle">
             |||
@@ -27,43 +25,53 @@
             <li> <a href="#" class="nav-links btn">Login</a></li>
         </ul>
     </nav>
+    <!-- Navigation Section Ends -->
+
+    <!-- Filter Section -->
     <div class="search">
         <input type="text" placeholder="filter your items" onkeyup="filter()" id="fiterTxt">
-        <!-- <b>Price : </b>
-        <input type="radio" name="price" id=""> Low to High
-        <input type="radio" name="price" id=""> High to Low -->
     </div>
+
+    <!-- Result Section - The fetched Products are apended here -->
     <div class="searchResult">
     </div>
+
+    <!-- Profile Section - this is to be shown after user clicks on profile icon -->
     <div class="profile" style="display: none;">
         <b onclick="document.querySelector('.profile').style.display = 'none'">X</b>
+        <!-- User Details -->
         <div class="user">
             <div class="image">
                 <img src="samples/profile-square.jpg" alt="">
             </div>
             <div class="data">
-                <h3>demo</h3>
-                <h6>demo@demo.demo</h6>
+                <h3>demo</h3><!-- Name -->
+                <h6>demo@demo.demo</h6><!-- Email -->
                 <div class="location">
                     <div>
-                        <p>demo</p>
+                        <p>demo</p><!-- Address -->
                     </div>
                 </div>
             </div>
         </div>
         <div class="buttons">
-            <button onclick="editBox()">Edit</button>
+            <button onclick="editBox()">Edit</button><!-- Edit Button - toogles the edit box-->
             <button
                 onclick="firebase.auth().signOut(); document.querySelector('.profile').style.display = 'none'">Logout</button>
+            <!-- Logout Button -->
         </div>
+        <!-- Edit Section -->
         <div class="edit" style="display: none;">
             <p>Change Details :-</p>
             <input type="file" id="changeImg" accept="image/png, image/jpeg" onchange="imgChanged = true">
-            <input type="text" placeholder="name" id="changeName">
-            <textarea placeholder="address" id="changeAdd"></textarea>
-            <button onclick="change()">Save</button>
+            <!-- Used to select a new profile image -->
+            <input type="text" placeholder="name" id="changeName"><!-- Change Name -->
+            <textarea placeholder="address" id="changeAdd"></textarea><!-- Change Area -->
+            <button onclick="change()">Save</button><!-- Save Button - calls change() function -->
         </div>
     </div>
+
+    <!-- Product Details Section - to be shown on button click -->
     <div class="details_container" style="display: none;">
         <b id="close"
             onclick="document.querySelector('.details_container').setAttribute('style', 'display: none;');">X</b>
@@ -73,12 +81,12 @@
             </div>
             <div class="others">
                 <div class="about">
-                    <h5>BRAND NAME</h5>
-                    <h1>The Catcher in the Rye</h1>
+                    <h5>BRAND NAME</h5><!-- Brand Name -->
+                    <h1>The Catcher in the Rye</h1><!-- Product Name -->
                     <div class="rating">
-                        <b>&#9733;&#9733;&#9733;&#9733;&#9734;</b>
+                        <b>&#9733;&#9733;&#9733;&#9733;&#9734;</b><!-- Ratings -->
                         &nbsp;&nbsp;&nbsp;
-                        <a href="">4 Reviews</a>
+                        <a href="">4 Reviews</a><!-- Number of reviews -->
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam magnam atque reiciendis!
@@ -87,19 +95,22 @@
                         voluptatibus iure alias minus recusandae totam tenetur. Ratione laudantium illo dicta sed ea.
                         Sint,
                         corporis.
-                    </p>
-                    Available QTY <span>500 pieces</span>
+                    </p><!-- Description -->
+                    Available QTY <span>500 pieces</span><!-- Quantity Available -->
                     <div class="price">
                         <b>
-                            <s>&#x20B9; 58.00</s><br>
+                            <s>&#x20B9; 58.00</s><br><!-- normal Price -->
                             &#x20B9; 55.00
+                            <!-- discounted Price -->
                         </b>
                         <div class="button">
-                            <button>Purchase</button>
+                            <button>Purchase</button><!-- Purchase Button  -->
                             <button onclick="document.querySelector('.rates').removeAttribute('style')">&#9734;</button>
+                            <!-- Rate Button - opens the list -->
                         </div>
                     </div>
                     <div class="rates" style="display: none;">
+                        <!-- rates Section -->
                         <ul>
                             <li onmouseover="fill(1)" onmouseout="unFill()" onclick="rateItem(1)">&#9734;</li>
                             <li onmouseover="fill(2)" onmouseout="unFill()" onclick="rateItem(2)">&#9734;</li>
@@ -112,11 +123,15 @@
             </div>
         </div>
     </div>
+
+    <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
     <script src="assets/script/config.js"></script>
+    <!-- Firebase Scripts Ends -->
+
     <script src="assets/script/auth.js"></script>
     <script src="assets/script/products.js"></script>
 </body>

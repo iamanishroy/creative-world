@@ -1,10 +1,22 @@
+/* 
+The 'refreshOutput' function is used to show the output created from the typed HTML.
+The function is called on keyUp occured the textarea.
+Logic : On each keyUp take the value from the textarea and set it in the output div.
+*/
 function refreshOutput() {
     var html = document.querySelector('.sendEmail textarea').value.trim();
     if (html != '') {
         document.querySelector('.sendEmail .output').innerHTML = html;
     }
 }
-var temp;
+/*
+The 'sendEmail' function is used to send Email.
+The function is called on button click.
+Logic:  1. Get the value
+        2. Confirm It
+        3. Fetch the email ids from the database
+        4. Send it.
+*/
 function sendEmail() {
     var html = document.querySelector('.sendEmail textarea').value.trim();
     if (html != '') {

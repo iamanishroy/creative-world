@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Creative World | Admin Panel</title>
     <link rel="stylesheet" href="style/main.css">
     <link rel="stylesheet" href="style/view.css">
     <link rel="stylesheet" href="style/upload.css">
@@ -13,7 +13,9 @@
 
 <body>
     <div class="retailer">
+        <!-- left Navigation Section -->
         <div class="nav">
+            <!-- User/ Admin Information -->
             <div class="user">
                 <div class="img">
                     <img src="../samples/profile-square.jpg" alt="">
@@ -24,6 +26,7 @@
                     <h5>Administrator</h5>
                 </div>
             </div>
+            <!-- Some Important and basic details -->
             <div class="imp_data">
                 <p>Total Stocks</p>
                 <b id="totalStok">0</b>
@@ -32,6 +35,7 @@
                 <p>Total Orders Left</p>
                 <b id="totalOrd">0</b>
             </div>
+            <!-- Navigation Buttons -->
             <ul>
                 <li id="tab_1" onclick="openTab(1)" class="active">add products</li>
                 <li id="tab_2" onclick="openTab(2)">view products</li>
@@ -40,6 +44,7 @@
                 <li id="tab_5" onclick="openTab(5)">view odrers</li>
                 <li id="tab_6" onclick="openTab(6)">send promotion email</li>
             </ul>
+            <!-- Credits -->
             <div class="bottom">
                 <p>Creative World</p>
                 <span>
@@ -48,7 +53,11 @@
                 </span>
             </div>
         </div>
+        <!-- Left Navigation Section Ends -->
+
+        <!-- right panel -->
         <div class="main">
+            <!-- Product Display Section -->
             <div class="div view" style="display: none;">
                 <h2>View Product</h2>
                 <table>
@@ -62,9 +71,13 @@
                             <th class="column6"></th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <!-- Items Append Here -->
+                    </tbody>
                 </table>
             </div>
+
+            <!-- Incomplete Orders Display Section -->
             <div class="div viewIncOrd" style="display: none;">
                 <h2>View Incomplete Orders</h2>
                 <table>
@@ -78,9 +91,13 @@
                             <th class="column6"></th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <!-- Result Append Here -->
+                    </tbody>
                 </table>
             </div>
+
+            <!-- Orders Display Section -->
             <div class="div viewOrd" style="display: none;">
                 <h2>View Orders</h2>
                 <table>
@@ -94,9 +111,13 @@
                             <th class="column6"></th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <!-- Result Append Here -->
+                    </tbody>
                 </table>
             </div>
+
+            <!-- Section to delete a Item -->
             <div class="div delItem" style="display: none;">
                 <h2>Delete Item</h2>
                 <table>
@@ -110,27 +131,39 @@
                             <th class="column6"></th>
                         </tr>
                     </thead>
-                    <tbody></tbody>
+                    <tbody>
+                        <!-- Items Append Here -->
+                    </tbody>
                 </table>
             </div>
+
+            <!-- Section to Send Email to registered email -->
             <div class="div sendEmail" style="display: none;">
                 <h2>Send Email</h2>
                 <div class="editor">
-               <textarea placeholder="type HTML for your email" onkeyup="refreshOutput()"></textarea>
-            <div class="output">
-                Output will be generated here...
+                    <!-- HTML Input -->
+                    <textarea placeholder="type HTML for your email" onkeyup="refreshOutput()"></textarea>
+                    <!-- Output of the HTML -->
+                    <div class="output">
+                        Output will be generated here...
+                    </div>
+                </div>
+                <button onclick="sendEmail()">Send</button> <!-- Send Button -->
             </div>
-            </div>
-               <button onclick="sendEmail()">Send</button>
-            </div>
+
+            <!-- Section to Add a Product -->
             <div class="div upload">
                 <h2>Add Product</h2>
+                <!-- Add Product Image -->
                 <div class="image">
+                    <!-- Display the selected Image -->
                     <img src="/assets/images/add-image.png" alt=""
                         onclick="document.querySelector('.image input').click()">
+                    <!-- Select an Image -->
                     <input type="file" style="display: none;" onchange="imgAdded = true; document.querySelector('.image img')
                     .setAttribute('src', reader.readAsDataURL(document.querySelector('.image input').files[0]))">
                 </div>
+                <!-- Add Product Details -->
                 <div class="details">
                     <div class="about">
                         <p>brand name</p>
@@ -159,6 +192,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Product Details Section -->
     <div class="details_container" style="display: none;">
         <b id="close"
             onclick="document.querySelector('.details_container').setAttribute('style', 'display: none;');">X</b>
@@ -195,6 +230,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Customer Details -->
     <div class="details_user_container" style="display: none;">
         <b id="close"
             onclick="document.querySelector('.details_user_container').setAttribute('style', 'display: none;');">X</b>
@@ -218,16 +255,21 @@
             </table>
         </div>
     </div>
+
+    <!-- Firsbase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-database.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-storage.js"></script>
     <script src="../assets/script/config.js"></script>
+    
+    <!-- SMTP Mailer -->
+    <script src="../assets/script/smtp.js"></script>
+
     <script src="script/addProduct.js"></script>
     <script src="script/main.js"></script>
     <script src="script/viewProduct.js"></script>
     <script src="script/viewOrders.js"></script>
     <script src="script/deleteItem.js"></script>
-    <script src="../assets/script/smtp.js"></script>
     <script src="script/sendEmail.js"></script>
 </body>
 

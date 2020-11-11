@@ -8,30 +8,34 @@
 </head>
 
 <body>
-    
-    <div class="login">
-        <center>
-            <a href="index.html"><img src="assets/images/Creative_World_LOGO.png" alt=""></a>
-            <h1>Creative World</h1>
-            <h3>Sign In</h3>
-        </center>
-        <div class="form">
-            <p>Email</p>
-            <input type="email" id="email">
-            <p>Password</p>
-            <input type="password" id="pass">
-            <button onclick="signIn()">Login</button>
-            <center>
-                <b>Don't have account?<a href="signUp.html"> Create Now</a></b>
-            </center>
+    <div class="form_bg">
+        <div class="name">
+            <a href="">
+                <h1>Creative</h1>
+                <h1>World</h1>
+            </a>
         </div>
+        <div class="form">
+            <div class="head">
+                <h2>Sign In</h2>
+                <p>Sign In to Order Items at ease...</p>
+            </div>
+            <div class="inputs">
+                <input type="text" id="email" placeholder="email" />
+                <br>
+                <input type="password" id="pass" placeholder="password" />
+                <br>
+                <button onclick="signIn()">Sign In</button>
+                <p>Don't have an account? <a href="signUp.html">Create Now</a></p>
+            </div>
+            <footer>
+                <p>&#169; Copyright Creative World, 2020</p>
+                <p>Made with <a>&#9825;</a> by Anish Roy.</p>
+            </footer>
+        </div>
+
     </div>
-    
-    <footer>
-        <p>&#169; Copyright Creative World, 2020</p>
-        <p>Made with &#9825; By Anish Roy.</p>
-    </footer>
-    
+
     <!-- Firebase Scripts -->
     <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>

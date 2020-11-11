@@ -47,7 +47,7 @@ body {
 
 .form_bg .form .head {
   width: 80%;
-  margin: 50px 30px 20px 100px;
+  margin: 30px 30px 20px 100px;
   border-bottom: 1px solid #ca097e5b;
 }
 
@@ -60,15 +60,15 @@ body {
 }
 
 .form_bg .form .inputs {
-  margin-top: 60px;
+  margin-top: 10px;
   text-align: center;
 }
 
 .form_bg .form .inputs input {
   padding: 12px 20px;
   width: 60%;
-  height: 55px;
-  margin: 15px 0;
+  height: 50px;
+  margin: 10px 0;
   font-size: 1rem;
   border: none;
   background-color: #ca097d15;
@@ -80,9 +80,9 @@ body {
 .form_bg .form .inputs button {
   background-color: #ca097e;
   color: aliceblue;
-  margin-top: 30px;
+  margin: 10px 0;
   border: none;
-  font-size: 1rem;
+  font-size: 0.9rem;
   padding: 15px 60px;
   width: 300px;
   border-radius: 10px;
@@ -91,8 +91,12 @@ body {
   outline: none;
 }
 
+.afterOTP {
+  display: none;
+}
+
 .form_bg .form .inputs p {
-  margin-top: 60px;
+  margin-top: 20px;
 }
 
 .form_bg .form p a {

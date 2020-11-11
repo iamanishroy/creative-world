@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background-image: url(./assets/images/authBack.jpg);
+        background-size: cover;
+    }
+
+    .form_bg {
+        background-image: url(./assets/images/authBack.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 80vh;
+        width: 70vw;
+        border-radius: 10px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: -5px 8px 17px 10px #00000069;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .form_bg .name {
+        width: 40%;
+    }
+
+    .form_bg .name a {
+        text-decoration: none;
+    }
+
+    .form_bg .name h1 {
+        text-align: end;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3.5rem;
+        color: #1E7AC7;
+    }
+
+    .form_bg .name h1:last-child {
+        font-size: 3rem;
+        color: #CA097E;
+    }
+
+    .form_bg .form {
+        width: 60%;
+    }
+
+    .form_bg .form .head {
+        width: 80%;
+        margin: 30px 30px 20px 100px;
+        border-bottom: 1px solid #CA097E5b;
+    }
+
+    .form_bg .form .head h2 {
+        margin-bottom: 15px;
+    }
+
+    .form_bg .form .head p {
+        margin-bottom: 10px;
+    }
+
+    .form_bg .form .inputs {
+        margin-top: 10px;
+        text-align: center;
+
+    }
+
+    .form_bg .form .inputs input {
+        padding: 12px 20px;
+        width: 60%;
+        height: 30px;
+        margin: 10px 0;
+        font-size: 1rem;
+        border: none;
+        background-color: #ca097d15;
+        color: #CA097E;
+        outline: none;
+        border-radius: 10px;
+
+    }
+
+    .form_bg .form .inputs button {
+        background-color: #CA097E;
+        color: aliceblue;
+        margin: 10px 0;
+        border: none;
+        font-size: 1rem;
+        padding: 15px 60px;
+        width: 300px;
+        border-radius: 10px;
+        box-shadow: -6px 6px 18px 2px #d80a8796;
+        cursor: pointer;
+        outline: none;
+    }
+
+    .form_bg .form .inputs p {
+        margin-top: 20px;
+    }
+
+    .form_bg .form p a {
+        text-decoration: none;
+        color: #CA097E;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .form_bg .form .inputs p a:hover {
+        text-decoration: underline;
+    }
+
+    footer {
+        margin-top: 30px;
+        text-align: center;
+        font-size: 0.8rem;
+    }
+</style>
+
+<body>
+    <div class="form_bg">
+        <div class="name">
+            <a href="">
+                <h1>Creative</h1>
+                <h1>World</h1>
+            </a>
+        </div>
+        <div class="form">
+            <div class="head">
+                <h2>Sign Up</h2>
+                <p>Sign In to Order Items at ease...</p>
+            </div>
+            <div class="inputs">
+                <input type="email" id="email" value="">
+                <button onclick="sendOTP()">Sent Verification Code</button>
+                <input type="text" class="afterOTP" id="otp">
+                <input type="password" class="afterOTP" id="pass">
+                <button class="afterOTP" onclick="createAccount()">Sign Up</button>
+                <p>Alredy have an account? <a href="login.html">Login Now</a></p>
+            </div>
+            <footer>
+                <p>&#169; Copyright Creative World, 2020</p>
+                <p>Made with <a>&#9825;</a> by Anish Roy.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

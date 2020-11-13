@@ -111,3 +111,28 @@ footer {
   text-align: center;
   font-size: 0.8rem;
 }
+
+@media screen and (max-width: 800px) {
+  .form_bg {
+    background-image: none;
+    background-color: aliceblue;
+    width: 93vw;
+  }
+
+  .form_bg .name {
+    display: none;
+  }
+  .form_bg .form {
+    width: 100%;
+  }
+  .form_bg .form .head {
+    width: 80%;
+    margin: 21px;
+  }
+  .form_bg .form .inputs input {
+    width: 90%;
+  }
+  .form_bg .form .inputs button {
+    width: 90%;
+  }
+}

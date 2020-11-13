@@ -1,4 +1,5 @@
 function createAccount() {
+  document.querySelector("button").innerHTML = "Signing Up..";
   var email = document.getElementById("email").value.trim();
   var pass = document.getElementById("pass").value.trim();
   if (email != "" && pass != "") {
@@ -32,6 +33,7 @@ function createAccount() {
                         window.location.replace("index.html");
                       })
                       .catch(function (error) {
+                        document.querySelector("button").innerHTML = "Sign Up";
                         alert(error);
                       });
                   });
@@ -40,12 +42,11 @@ function createAccount() {
           });
       })
       .catch((error) => {
+        document.querySelector("button").innerHTML = "Sign Up";
         alert(error);
       });
   } else {
+    document.querySelector("button").innerHTML = "Sign Up";
     alert("Some field is missing..");
   }
 }
-
-// var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-// if(inputText.value.match(mailformat));

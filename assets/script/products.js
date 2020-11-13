@@ -200,7 +200,10 @@ function filter() {
     shownList = new Array();
     document.querySelector(".searchResult").innerHTML = "";
     allItem.forEach((item) => {
-      if (item[0].includes("~-~" + txt) && !shownList.includes(item[1])) {
+      if (
+        (item[0] + "").toLowerCase().includes("~-~" + txt.toLowerCase()) &&
+        !shownList.includes(item[1])
+      ) {
         shownList.push(item[1]);
         display(item[1]);
       }

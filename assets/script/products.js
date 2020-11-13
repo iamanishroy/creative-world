@@ -1,32 +1,48 @@
 var allItem = new Array();
 var itemIds = new Array();
-firebase.database().ref('products').once('value', function (snapshot) {
+firebase
+  .database()
+  .ref("products")
+  .once("value", function (snapshot) {
     snapshot.forEach(function (childSnpshot) {
-        prod = childSnpshot.val();
-        prodRate = 0;
-        rateCount = 0;
-        if (prod.rate) {
-            var rates = Object.values(prod.rate);
-            var totalRates = 0;
-            rateCount = rates.length;
-            for (var i = 0; i < rates.length; i++) {
-                totalRates += parseInt(rates[i].rate);
-            }
-            prodRate = Math.round(totalRates / rates.length);
+      prod = childSnpshot.val();
+      prodRate = 0;
+      rateCount = 0;
+      if (prod.rate) {
+        var rates = Object.values(prod.rate);
+        var totalRates = 0;
+        rateCount = rates.length;
+        for (var i = 0; i < rates.length; i++) {
+          totalRates += parseInt(rates[i].rate);
         }
-        sessionStorage.setItem(prod.id, JSON.stringify([prod.image, prod.bName, prod.pName, prod.desc, prod.qty, prod.nPrice, prod.dPrice, prodRate, rateCount]));
-        allItem.push(['~-~' + prod.pName, prod.id]);
-        allItem.push(['~-~' + prod.bName, prod.id]);
-        itemIds.push(prod.id);
-        var stars = '';
-        for (var i = 1; i <= 5; i++) {
-            if (i <= prodRate) {
-                stars += '&#9733;';
-            } else {
-                stars += '&#9734;';
-            }
+        prodRate = Math.round(totalRates / rates.length);
+      }
+      sessionStorage.setItem(
+        prod.id,
+        JSON.stringify([
+          prod.image,
+          prod.bName,
+          prod.pName,
+          prod.desc,
+          prod.qty,
+          prod.nPrice,
+          prod.dPrice,
+          prodRate,
+          rateCount,
+        ])
+      );
+      allItem.push(["~-~" + prod.pName, prod.id]);
+      allItem.push(["~-~" + prod.bName, prod.id]);
+      itemIds.push(prod.id);
+      var stars = "";
+      for (var i = 1; i <= 5; i++) {
+        if (i <= prodRate) {
+          stars += "&#9733;";
+        } else {
+          stars += "&#9734;";
         }
-        document.querySelector('.searchResult').innerHTML += `
+      }
+      document.querySelector(".searchResult").innerHTML += `
             <div class="card">
                 <img src="${prod.image}" alt="">
                 <div class="detail">
@@ -41,20 +57,31 @@ firebase.database().ref('products').once('value', function (snapshot) {
                 </div>
             </div>`;
     });
-});
+  });
 
 var authenticated = false;
 
-function openDet(id, image, bName, pName, desc, qty, nPrice, dPrice, prodRate, rateCount) {
-    var stars = '';
-    for (var i = 1; i <= 5; i++) {
-        if (i <= prodRate) {
-            stars += '&#9733;';
-        } else {
-            stars += '&#9734;';
-        }
+function openDet(
+  id,
+  image,
+  bName,
+  pName,
+  desc,
+  qty,
+  nPrice,
+  dPrice,
+  prodRate,
+  rateCount
+) {
+  var stars = "";
+  for (var i = 1; i <= 5; i++) {
+    if (i <= prodRate) {
+      stars += "&#9733;";
+    } else {
+      stars += "&#9734;";
     }
-    document.querySelector('.details_container .details').innerHTML = `
+  }
+  document.querySelector(".details_container .details").innerHTML = `
     <div class="image">
         <img src="${image}" alt="">
     </div>
@@ -89,101 +116,122 @@ function openDet(id, image, bName, pName, desc, qty, nPrice, dPrice, prodRate, r
             </div>
         </div>
     </div>`;
-    document.querySelector('.details_container').removeAttribute('style');
+  document.querySelector(".details_container").removeAttribute("style");
 }
 function rateItem(id, r) {
-    if (authenticated) {
-        firebase.database().ref('products/' + id + '/rate/' + uid).update({
-            rate: r
-        }).then(() => {
-            alert('Thank You for rating!!');
-        });
-    }
-    document.querySelector('.rates').setAttribute('style', 'display: none;')
+  if (authenticated) {
+    firebase
+      .database()
+      .ref("products/" + id + "/rate/" + uid)
+      .update({
+        rate: r,
+      })
+      .then(() => {
+        alert("Thank You for rating!!");
+      });
+  }
+  document.querySelector(".rates").setAttribute("style", "display: none;");
 }
 var last = 0;
 function fill(o) {
-    if (last != o) {
-        liCounter = 1
-        document.querySelectorAll('.rates ul li').forEach((li) => {
-            if (liCounter <= o) {
-                li.innerHTML = '&#9733;';
-            }
-            liCounter++;
-        });
-        last = o;
-    }
+  if (last != o) {
+    liCounter = 1;
+    document.querySelectorAll(".rates ul li").forEach((li) => {
+      if (liCounter <= o) {
+        li.innerHTML = "&#9733;";
+      }
+      liCounter++;
+    });
+    last = o;
+  }
 }
 function unFill() {
-    document.querySelectorAll('.rates ul li').forEach((li) => {
-        li.innerHTML = '&#9734;';
-    });
+  document.querySelectorAll(".rates ul li").forEach((li) => {
+    li.innerHTML = "&#9734;";
+  });
 }
 function order(id, pName, price, qty) {
-    if (authenticated) {
-        if (confirm('You want to order ' + pName)) {
-            var oId = String.fromCharCode(Math.floor(Math.random() * 26) + 97) + Math.random().toString(16).slice(2) + Date.now().toString(16).slice(4);
-            firebase.database().ref('orders/' + oId).set({
-                orderid: oId,
-                productid: id,
-                product: pName,
-                price: price,
-                uid: uid,
-                name: userName,
-                email: email,
-                completed: false
-            }).then(() => {
-                firebase.database().ref('products/' + id).update({
-                    qty: (parseInt(qty) - 1) + ''
-                }).then(() => {
-                    alert('Thank You! Your order sucssfully completed. Our representative will contact you within 24 hours.');
-                    document.querySelector('.details_container').setAttribute('style', 'display: none;');
-                })
+  if (authenticated) {
+    if (confirm("You want to order " + pName)) {
+      var oId =
+        String.fromCharCode(Math.floor(Math.random() * 26) + 97) +
+        Math.random().toString(16).slice(2) +
+        Date.now().toString(16).slice(4);
+      firebase
+        .database()
+        .ref("orders/" + oId)
+        .set({
+          orderid: oId,
+          productid: id,
+          product: pName,
+          price: price,
+          uid: uid,
+          name: userName,
+          email: email,
+          completed: false,
+        })
+        .then(() => {
+          firebase
+            .database()
+            .ref("products/" + id)
+            .update({
+              qty: parseInt(qty) - 1 + "",
+            })
+            .then(() => {
+              alert(
+                "Thank You! Your order sucssfully completed. Our representative will contact you within 24 hours."
+              );
+              document
+                .querySelector(".details_container")
+                .setAttribute("style", "display: none;");
             });
-        }
-    } else {
-        window.location.replace('login.html');
+        });
     }
+  } else {
+    alert(
+      "You are not verified kindly create account or check your email for verification link."
+    );
+  }
 }
 
 function filter() {
-    var txt = document.getElementById('fiterTxt').value.trim();
-    if (txt != '') {
-        shownList = new Array();
-        document.querySelector('.searchResult').innerHTML = '';
-        allItem.forEach((item) => {
-            if (item[0].includes('~-~' + txt) && !shownList.includes(item[1])) {
-                shownList.push(item[1]);
-                display(item[1]);
-            }
-        });
-    } else {
-        itemIds.forEach((id) => {
-            display(id);
-        });
-    }
+  var txt = document.getElementById("fiterTxt").value.trim();
+  if (txt != "") {
+    shownList = new Array();
+    document.querySelector(".searchResult").innerHTML = "";
+    allItem.forEach((item) => {
+      if (item[0].includes("~-~" + txt) && !shownList.includes(item[1])) {
+        shownList.push(item[1]);
+        display(item[1]);
+      }
+    });
+  } else {
+    itemIds.forEach((id) => {
+      display(id);
+    });
+  }
 }
 
 function display(id) {
-    productArr = JSON.parse(sessionStorage.getItem(id));
-    image = productArr[0];
-    bName = productArr[1];
-    pName = productArr[2];
-    desc = productArr[3];
-    qty = productArr[4];
-    nPrice = productArr[5];
-    dPrice = productArr[6];
-    prodRate = parseInt(productArr[7]);
-    rateCount = parseInt(productArr[8]);
-    var stars = '';
-    for (var i = 1; i <= 5; i++) {
-        if (i <= prodRate) {
-            stars += '&#9733;';
-        } else {
-            stars += '&#9734;';
-        }
+  productArr = JSON.parse(sessionStorage.getItem(id));
+  image = productArr[0];
+  bName = productArr[1];
+  pName = productArr[2];
+  desc = productArr[3];
+  qty = productArr[4];
+  nPrice = productArr[5];
+  dPrice = productArr[6];
+  prodRate = parseInt(productArr[7]);
+  rateCount = parseInt(productArr[8]);
+  var stars = "";
+  for (var i = 1; i <= 5; i++) {
+    if (i <= prodRate) {
+      stars += "&#9733;";
+    } else {
+      stars += "&#9734;";
     }
-    document.querySelector('.searchResult').innerHTML += `
+  }
+  document.querySelector(".searchResult").innerHTML += `
          <div class="card">
             <img src="${image}" alt="">
             <div class="detail">
@@ -198,4 +246,3 @@ function display(id) {
             </div>
         </div>`;
 }
-

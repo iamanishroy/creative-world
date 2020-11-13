@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/styles/navbar.css">
-    <link rel="stylesheet" href="assets/styles/signUp.css">
+    <link rel="stylesheet" href="assets/styles/auth.css">
     <title>Creative World | SignUp</title>
 </head>
 
@@ -21,11 +21,9 @@
                 <p>Sign In to Order Items at ease...</p>
             </div>
             <div class="inputs">
-                <input type="email" id="email" value="">
-                <button onclick="sendOTP()">Sent Verification Code</button>
-                <input type="text" class="afterOTP" id="otp">
-                <input type="password" class="afterOTP" id="pass">
-                <button class="afterOTP" onclick="createAccount()">Sign Up</button>
+                <input type="email" id="email" placeholder="email">
+                <input type="password" id="pass" placeholder="password">
+                <button onclick="createAccount()">Sign Up</button>
                 <p>Alredy have an account? <a href="login.html">Login Now</a></p>
             </div>
             <footer>

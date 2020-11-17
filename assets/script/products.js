@@ -1,3 +1,12 @@
+/*
+product.js - This is made to handel the product page of the Application. 
+It has functions for :-
+==> fetching and displaying all the products in the form of cards.
+==> filtering products from the fetched product list
+==> ordering a product
+==> rating a product
+*/
+
 var allItem = new Array();
 var itemIds = new Array();
 firebase

@@ -9,6 +9,8 @@ It has functions for :-
 
 var allItem = new Array();
 var itemIds = new Array();
+
+/** Fetching the products from database and storing it in session storage and displaying in **/
 firebase
   .database()
   .ref("products")
